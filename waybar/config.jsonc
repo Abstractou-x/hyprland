@@ -1,0 +1,108 @@
+{
+    "position":"top",
+    "layer": "top",
+    "width":1800,
+    "height":30,
+    "spacing": 10,
+    "margin-top": 8,
+    "modules-left": [
+	    "custom/apps",
+	    "hyprland/workspaces"
+    ],
+    "modules-center":[
+        "custom/media"
+    ],
+
+    "modules-right":[
+	    "custom/notification",
+	    "hyprland/language",
+	    "custom/brightness",
+	    "custom/volume",
+	    "custom/microphone",
+	    "network",
+	    "battery",
+            "clock",
+	    "custom/power"
+    ],
+
+    "hyprland/language": {
+	    "format": "{short} {variant}",
+	    "on-click": "~/Documents/projects/virenv/bin/python ~/Documents/projects/langcheck.py"
+    },
+
+    "custom/power": {
+	    "format": "⏻",
+	    "on-click": "rofi -show power-menu -modi power-menu:~/.config/rofi/sh/powermenu.sh -config ~/.config/rofi/powermenu.rasi"
+    },
+
+    "clock": {
+	    "format": "  {:%H:%M %p}"
+
+    },
+    "custom/apps": {
+	    "format": "󰣇",
+	    "on-click": "rofi -show"
+    },
+    "network": {
+     "format-wifi":"   {essid}",
+     "format-ethernet":"  {ifname}",
+     "format-disconnected":"󰖪"
+    },
+
+    "custom/brightness": {
+	    "exec": "brightnessctl g",
+	    "return-type": "raw",
+	    "format": "󰍹  {}%",
+	    "interval": 1,
+	    "tooltip": false,
+	    "on-click": "brightnessctl s 100%"
+    },
+
+    "battery": {
+        "format":"{icon} {capacity}%", 
+        "format-icons":["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-charging":"󰂄 {capacity}%"
+    },
+    "custom/volume":{
+	    "exec": "sh ~/sh/output.sh",
+	    "return-type": "raw",
+	    "format": "{}",
+	    "interval": 1,
+	    "on-click": "pavucontrol",
+	    "on-click-right": "pamixer --toggle-mute"
+
+    },
+    "custom/microphone": {
+	    "exec": "sh ~/sh/mic.sh",
+	    "return-type": "raw",
+	    	"format": "{}",
+            "interval": 1,
+	    "on-click": "pavucontrol",
+	    "on-click-right": "pamixer --default-source --toggle-mute"
+    },
+    "custom/notification":{
+	    "format":"󰂚"
+    },
+
+//Middle side modules
+    "custom/media": {
+        "format": "🎜 {}",
+        "interval":3,
+	"max-length": 20,
+        "escape": true,
+        "exec": "playerctl metadata --format='{{ title }}'"
+    },
+
+//LEFT SIDE MODULES
+
+
+    "hyprland/workspaces": {
+        "format":"{icon}",
+        "sort-by-name":true,
+        "format-icons":{
+            "default":"⏺"
+        }
+    },
+    
+    "tray": {}
+}

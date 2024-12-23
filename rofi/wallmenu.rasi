@@ -1,0 +1,95 @@
+configuration {
+	modi: "drun";
+	font: "JetBrainsMono NF Bold 11";
+	show-icons: true;
+}
+
+window {
+	enabled: true;
+	fullscreen: false;
+	width: 1780;
+	height: 420;
+	background-color: transparent;
+	padding: 0px;
+	border-radius: 10px;
+	border: 3px;
+	border-color: #f38ba8;
+}
+
+
+mainbox {
+	enabled: true;
+	background-color: #11111b;
+	border: 0px;
+	boroder-color: transparent;
+	border-radius: 10px;
+	width: 400px;
+	height: 450px;
+}
+
+listview {
+	border-color: transparent;
+	layout: horizontal;
+}
+
+listbox {
+
+}
+
+inputbar {
+	enabled: false;
+	border-color: transparent;
+	border: 2px;
+	background-color: #1e1e2e;
+	border-radius: 10px;
+	children: [entry];
+	margin: 13px 10px 0px 10px;
+}
+
+entry {
+	background-color: transparent;
+	color: #f38ba8;
+	margin: 5px;
+}
+element {
+	spacing: 50px;
+	border-color: transparent;
+	background-color: transparent;
+	margin: 10px;
+	border-radius: 10px;
+	border: 40px 15px;
+}
+
+element.normal.normal {
+	background-color: transparent;
+}
+element.alternate.normal {
+	background-color: transparent;
+}
+
+
+element-icon {
+	padding: 0px;
+	size: 300;
+	border: 0;
+}
+element-text { 
+	color: #f38ba8;
+	enabled: false;
+}
+
+scrollbar {
+	enabled: false;
+	background-color: transparent;
+	handle-color: transparent;
+}
+
+mode-switcher {
+	enabled: false;
+}
+
+message {
+	enabled: false;
+}
+
+
